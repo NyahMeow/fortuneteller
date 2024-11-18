@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ビューポート設定を追加 -->
+<title>運勢チェッカー</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+    
+<body>
+    <div class="container">
+        
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="pyscript.html">PyScriptVer</a>
+        <a href="cluster_analysis.html">ClusterAnalysis</a>
+    </nav>
+
+        <br>
+        <label for="colour-select">好きな色を選んでください：</label>
+        <select id="colour-select">
+            <option value="黒">黒</option>
+            <option value="白">白</option>
+            <option value="オレンジ">オレンジ</option>
+        </select>
+        <label for="number-input">好きな数字を選んでください（0、1、2）※半角数値で入力：</label>
+        <input type="number" id="number-input">
+        <button onclick="checkFortune()">運勢をチェック</button>
+        <p id="result-output"></p>
+        <br>
+        
+    <nav>
+     <a href="index.html">Home</a>
+      <a href="pyscript.html">PyScriptVer</a>
+      <a href="cluster_analysis.html">ClusterAnalysis</a>
+    </nav>
+    </div>
+
+    <script>
+        function checkFortune() {
+            var colour = document.getElementById('colour-select').value;
+            var number = parseInt(document.getElementById('number-input').value, 10);
+            var result = "凶"; // デフォルトの値
+
+            if (colour === "黒" && number === 0) {
+                result = "小吉";
+            } else if (colour === "黒" && number === 1) {
+                result = "中吉";
+            } else if (colour === "黒" && number === 2) {
+                result = "凶";
+            } else if (colour === "白" && number === 0) {
+                result = "中吉";
+            } else if (colour === "白" && number === 1) {
+                result = "中吉";
+            } else if (colour === "白" && number === 2) {
+                result = "大凶";
+            } else if (colour === "オレンジ" && number === 0) {
+                result = "凶";
+            } else if (colour === "オレンジ" && number === 1) {
+                result = "大吉";
+            } else if (colour === "オレンジ" && number === 2) {
+                result = "中吉";
+            }
+
+            document.getElementById('result-output').innerText = "あなたの今週の運勢は【" + result + "】です";
+        }
+    </script>
+    
+</body>
+</html>
