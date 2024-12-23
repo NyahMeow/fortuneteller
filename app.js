@@ -25,3 +25,20 @@
 
             document.getElementById('result-output').innerText = "あなたの今週の運勢は【" + result + "】です";
         }
+
+// 画像の表示処理
+    var imageContainer = document.getElementById('image-container');
+    imageContainer.innerHTML = ""; // 既存の画像をクリア
+
+    var img = document.createElement('img');
+    switch (result) {
+        case "小吉":
+            img.src = "images/moss.jpg";
+            break;
+
+}
+    img.alt = result; // アクセシビリティのためにalt属性を設定
+    img.style.width = "200px"; // 必要に応じてスタイルを調整
+    imageContainer.appendChild(img);
+}
+
