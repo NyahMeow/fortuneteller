@@ -1,22 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ビューポート設定を追加 -->
-<title>運勢チェッカー</title>
-<link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>運勢チェッカー</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-    
 <body>
     <div class="container">
-        
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="pyscript.html">PyScriptVer</a>
-        <a href="cluster_analysis.html">ClusterAnalysis</a>
-    </nav>
-
-        <br>
+        <h1>運勢チェッカー</h1>
         <label for="colour-select">好きな色を選んでください：</label>
         <select id="colour-select">
             <option value="黒">黒</option>
@@ -24,23 +16,13 @@
             <option value="オレンジ">オレンジ</option>
         </select>
         <br>
-        <label for="number-input">好きな数字を選んでください（0、1、2）※半角数値で入力：</label>
-        <input type="number" id="number-input">
+        <label for="number-input">好きな数字を選んでください（0、1、2）：</label>
+        <input type="number" id="number-input" min="0" max="2">
         <br>
         <button onclick="checkFortune()">運勢をチェック</button>
         <p id="result-output"></p>
-        
-        <!-- 運勢画像のコンテナを追加 -->
         <div id="image-container" style="margin-top: 20px;"></div>
-
-    <nav>
-     <a href="index.html">Home</a>
-      <a href="pyscript.html">PyScriptVer</a>
-      <a href="cluster_analysis.html">ClusterAnalysis</a>
-    </nav>
-    </div>    
-
+    </div>
     <script src="app.js"></script>
-
 </body>
 </html>
